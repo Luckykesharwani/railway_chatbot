@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Indian Railway Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Indian Railway Portal</h1>
+    <p>Book tickets and check train schedules</p>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Schedule</a>
+    <a href="#">Booking</a>
+    <a href="#">Contact</a>
+</nav>
+
+<div class="container">
+
+    <div class="card">
+        <h2>Train Schedule</h2>
+        <table>
+            <tr>
+                <th>Train No</th>
+                <th>Train Name</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Departure</th>
+            </tr>
+            <tr>
+                <td>12345</td>
+                <td>Rajdhani Express</td>
+                <td>Delhi</td>
+                <td>Mumbai</td>
+                <td>16:30</td>
+            </tr>
+            <tr>
+                <td>22456</td>
+                <td>Shatabdi Express</td>
+                <td>Lucknow</td>
+                <td>Delhi</td>
+                <td>06:00</td>
+            </tr>
+            <tr>
+                <td>19012</td>
+                <td>Duronto Express</td>
+                <td>Kolkata</td>
+                <td>Pune</td>
+                <td>22:15</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card">
+        <h2>Book Ticket</h2>
+        <form>
+            <input type="text" placeholder="Passenger Name">
+            <input type="text" placeholder="From">
+            <input type="text" placeholder="To">
+            <input type="date">
+            <select>
+                <option>Sleeper</option>
+                <option>AC 3 Tier</option>
+                <option>AC 2 Tier</option>
+            </select>
+            <button type="submit">Book Now</button>
+        </form>
+    </div>
+
+    <div class="card">
+        <h2>Need Help?</h2>
+        <p>Click below to chat with Railway Assistant</p>
+        <button onclick="openChat()">Ask Railway Assistant</button>
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 Indian Railway Portal</p>
+        Created By Lucky Kesharwani
+    </p>
+</footer>
+
+<script src="script.js"></script>
+
+<script>
+  window.watsonAssistantChatOptions = {
+    integrationID: "7f8050c8-9503-418a-98be-68b16bd01d6b", // The ID of this integration.
+    region: "au-syd", // The region your integration is hosted in.
+    serviceInstanceID: "bb9a0747-06b8-49c5-b3a8-e1d156deac85", // The ID of your service instance.
+    onLoad: async (instance) => { await instance.render(); }
+  };
+  setTimeout(function(){
+    const t=document.createElement('script');
+    t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+    document.head.appendChild(t);
+  });
+</script>
+
+</body>
+</html>
